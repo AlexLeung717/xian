@@ -9,7 +9,7 @@ let header = {
         let win = $(window),
             header = $('#header');
 
-        win.scroll(function(){
+        win.scroll(() => {
             let winHeight = win.scrollTop();
             // 当滚动高度大于500px时，header悬浮
             if( winHeight > 500 ){
