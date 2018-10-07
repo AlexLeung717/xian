@@ -7,10 +7,11 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 const WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 
 // 根据html名称设置内容cls
-const getHtmlConfig = (name) => {
+const getHtmlConfig = (name, title) => {
     return {
         template : './src/view/'+ name +'.html',
         filename : 'view/'+ name +'.html',
+        title    : title,
         inject   : true,
         hash     : true,
         chunks   : ['common', name]
@@ -19,9 +20,9 @@ const getHtmlConfig = (name) => {
 
 var config = {
     entry: {
-        'common' : ['babel-polyfill', './src/page/common/index.js'],
-        'index'  : ['babel-polyfill', './src/page/index/index.js'],
-        'news'   : ['babel-polyfill', './src/page/news/index.js']
+        'common' : ['./src/page/common/index.js'],
+        'index'  : ['./src/page/index/index.js'],
+        'news'   : ['./src/page/news/index.js']
     },
     output: {
         path: './dist',
@@ -67,10 +68,10 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
 
         // 打包html页面
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('news')),
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页--轻松一刻')),
+        new HtmlWebpackPlugin(getHtmlConfig('news', '新闻热点')),
 
-        // 运行npm命令，自动在浏览器中打开该地址
+        // 运行npm命令，自动打开浏览器中并访问该地址
         new OpenBrowserPlugin({ url: 'http://localhost:8088' })
     ],
 }

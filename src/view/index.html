@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <%= require('html-loader!./layout/html-head.html') %>
+    <title> <%= htmlWebpackPlugin.options.title %>--Just to relax</title>
 <body>
-    
+    <%= require('html-loader!./layout/header.html') %>
+
+    <div class="w page-wrap">
+        <%= require('html-loader!./layout/sideTop.html') %>
+    </div>
+   
     
 </body>
 </html>

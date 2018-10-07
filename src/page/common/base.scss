@@ -1,0 +1,147 @@
+
+$comColor: #ed4340;
+$bgColor: #f8f8f8;
+$imgPath: '../../image';
+
+
+// 基础样式类
+html, body,
+div, p,
+h1, h2, h3, h4, h5, h6,
+ul, ol, li,
+dl, dt, dd{
+    margin: 0;
+    padding: 0;
+}
+
+body, a, input, button, textarea{
+    font-family: 'Microsoft YaHei';
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+  
+.fl{
+    float: left;
+}
+
+.fr{
+    float: right;
+}
+
+.text-overflow{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.clearfix:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.hide{
+    display: none;
+}
+
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.headerFix{
+    position: fixed;
+    top: -60px;
+    left: 0; 
+    z-index: 2;
+}
+
+
+// 公共样式类
+body{
+    background-color: $bgColor;
+}
+
+#header{
+    width: 100%;
+    height: 60px;
+    background: $comColor;
+
+    .container{
+        width: 1200px;
+        height: 60px;
+        line-height: 60px;
+        margin: 0 auto;
+
+        span{
+            display: inline-block;
+            font-size: 35px;
+            font-family: '宋体';
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 5px 5px 2px rgba(255,255,255,.3);
+            transform: rotateY(-28deg)  translateY(-2px);
+        }
+
+        span + span{
+            transform: rotateY(32deg)  translateY(2px);
+        }
+
+        .nav-list{
+            height: 60px;
+            
+            li{
+                float: left;
+                
+                a{
+                    display: inline-block;
+                    font-size: 20px;
+                    height: 60px;
+                    line-height: 60px;
+                    text-align: center;
+                    color: white;
+
+                    &:hover,&.active{
+                        font-weight: bold;
+                        text-shadow: 0px 0px 15px white;
+                    }
+                }
+
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+            }
+
+        }
+    }
+}
+
+.page-wrap{
+    background: white;
+    min-height: 500px;
+    // min-height: 2000px;
+    box-shadow: 5px 5px 5px rgba(150, 150, 150, 0.2), -5px 0px 5px rgba(150, 150, 150, 0.2), ;
+}
+
+.backToTop{
+    display: none;
+    position: fixed;
+    width: 58px;
+    height: 58px;
+    right: 10px;
+    bottom: 100px;
+    background-image: url(#{$imgPath}/backToTop.gif);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    
+    &:hover{
+        background-position: -58px 0;
+    }
+}
