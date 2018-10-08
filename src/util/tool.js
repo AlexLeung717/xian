@@ -1,4 +1,5 @@
 
+let hogan = require('hogan.js');
 
 let tools = {
 
@@ -35,6 +36,14 @@ let tools = {
         alert( txt || "操作失败" )
     },
 
+    // html渲染
+    renderHtml: function(templateHtml, data){
+        let temp    = hogan.compile(templateHtml),
+            result  = temp.render(data); 
+        return result;
+    },
+
+    // 回到首页
     goHome: function(){
         window.location.href = './index.html';
     },

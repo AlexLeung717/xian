@@ -69,6 +69,11 @@ body{
     background-color: $bgColor;
 }
 
+.fz-el{
+    width: 100%;
+    height: 1px;
+}
+
 #header{
     width: 100%;
     height: 60px;
@@ -146,9 +151,11 @@ body{
     }
 }
 
-#loading{
-
+#loading-con{
     display: none;
+}
+#loading{
+    
     width: 200px;
     height: 150px;
     margin: 0 auto;

@@ -10,7 +10,7 @@ let sideTop = {
 
         // 回到顶部图标实现/隐藏
         win.scroll(() => {
-            if (win.scrollTop() > 800) {
+            if (win.scrollTop() > 600) {
                 sideTop.show(150);
             } else {
                 sideTop.hide(150);
